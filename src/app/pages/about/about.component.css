@@ -1,0 +1,133 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+}
+
+.contact-section{
+    padding:70px 8%;
+}
+
+.contact-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.contact-title h1{
+    font-size:52px;
+    color:#1f2a44;
+    margin-bottom:12px;
+    font-weight:700;
+}
+
+.contact-title p{
+    color:#6b7280;
+    font-size:18px;
+}
+
+.contact-container{
+    display:flex;
+    gap:40px;
+    justify-content:center;
+    align-items:flex-start;
+    flex-wrap:wrap;
+}
+
+.contact-form{
+    width:600px;
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+
+.contact-form label{
+    display:block;
+    margin-top:18px;
+    margin-bottom:8px;
+    font-weight:bold;
+    color:#222;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:16px;
+    outline:none;
+}
+
+.contact-form textarea{
+    height:120px;
+    resize:none;
+}
+
+.contact-form button{
+    width:100%;
+    margin-top:25px;
+    padding:15px;
+    border:none;
+    border-radius:8px;
+    background:#0b74b5;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.contact-form button:hover{
+    background:#095c90;
+}
+
+.contact-info{
+    width:600px;
+}
+
+.map-box{
+    height:250px;
+    background:#dfe8f3;
+    border-radius:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#5f6b7a;
+    font-size:22px;
+    margin-bottom:35px;
+    border:1px solid #cfd9e5;
+}
+
+.details p{
+    margin-bottom:22px;
+    font-size:20px;
+    color:#222;
+}
+
+.details strong{
+    color:#1f2a44;
+}
+
+@media(max-width:992px){
+
+.contact-container{
+    flex-direction:column;
+    align-items:center;
+}
+
+.contact-form,
+.contact-info{
+    width:100%;
+}
+
+.contact-title h1{
+    font-size:40px;
+}
+
+}
