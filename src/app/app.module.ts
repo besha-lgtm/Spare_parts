@@ -36,6 +36,11 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { AboutComponent } from './pages/about/about.component';
 import { FaqComponent } from './pages/faq/faq.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { ShippingComponent } from './pages/shipping/shipping.component';
+import { PaymentComponent } from './pages/payment/payment.component';
+import { ConfirmationComponent } from './pages/confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +52,11 @@ import { FaqComponent } from './pages/faq/faq.component';
     ProductsComponent,
     AboutComponent,
     FaqComponent,
+    FooterComponent,
+    CartComponent,
+    ShippingComponent,
+    PaymentComponent,
+    ConfirmationComponent,
   ],
   imports: [
     BrowserModule,

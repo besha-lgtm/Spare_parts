@@ -8,6 +8,11 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { AboutComponent } from './pages/about/about.component';
 import { FaqComponent } from './pages/faq/faq.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { ShippingComponent } from './pages/shipping/shipping.component';
+import { PaymentComponent } from './pages/payment/payment.component';
+import { ConfirmationComponent } from './pages/confirmation/confirmation.component';
 
 
 const routes: Routes = [
@@ -32,7 +37,17 @@ const routes: Routes = [
   // ✅ FAQ
   { path: 'faq', component: FaqComponent },
 
-  // ✅ Header
+  // ✅ Footer
+  { path: 'footer', component: FooterComponent },
+  // ✅ Cart
+  { path: 'cart', component: CartComponent },
+  // ✅ Shipping
+  { path: 'shipping', component: ShippingComponent },
+  // ✅ Payment
+  { path: 'payment', component: PaymentComponent },
+  // ✅ Confirmation
+  { path: 'confirmation', component: ConfirmationComponent },
+ // ✅ Header
   { path: 'header', component: HeaderComponent }
 
   
