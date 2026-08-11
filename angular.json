@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "hmep_portal": {
+    "sparepart_portal": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/hmep_portal",
+            "outputPath": "dist/sparepart_portal",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -80,10 +80,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "hmep_portal:build:production"
+              "buildTarget": "sparepart_portal:build:production"
             },
             "development": {
-              "buildTarget": "hmep_portal:build:development"
+              "buildTarget": "sparepart_portal:build:development"
             }
           },
           "defaultConfiguration": "development"
