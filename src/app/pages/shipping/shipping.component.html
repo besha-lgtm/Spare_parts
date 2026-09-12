@@ -1,1 +1,291 @@
-<p>shipping works!</p>
+<app-header></app-header>
+
+<!-- ================= SHIPPING PAGE ================= -->
+
+<main class="shipping-page">
+
+    <h1 class="page-title">
+        <i class="fa-solid fa-truck"></i>
+        Shipping Information
+    </h1>
+
+    <!-- ================= CHECKOUT STEPS ================= -->
+
+    <div class="checkout-progress">
+        <div class="progress-step completed">
+            <span class="step-number">
+                <i class="fa-solid fa-check"></i>
+            </span>
+            <span>Cart</span>
+        </div>
+        <div class="progress-line active-line"></div>
+        <div class="progress-step active">
+            <span class="step-number">2</span>
+            <span>Shipping</span>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-step">
+            <span class="step-number">3</span>
+            <span>Payment</span>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-step">
+            <span class="step-number">4</span>
+            <span>Confirm</span>
+        </div>
+    </div>
+
+    <div class="shipping-layout">
+
+        <!-- ================= LEFT SIDE ================= -->
+
+        <section class="shipping-form-container">
+
+            <!-- Contact Information -->
+
+            <div class="form-card">
+                <div class="section-heading">
+                    <div class="section-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div>
+                        <h2>Contact Information</h2>
+                        <p>We'll use this information to contact you about your order.</p>
+                    </div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="email">
+                            Email Address
+                        </label>
+                        <input
+                            id="email"
+                            type="email"
+                            placeholder="john@example.com"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">
+                            Phone Number
+                        </label>
+                        <input
+                            id="phone"
+                            type="tel"
+                            placeholder="+91 98765 43210"
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shipping Address -->
+
+            <div class="form-card">
+                <div class="section-heading">
+                    <div class="section-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h2>Shipping Address</h2>
+                        <p>Enter the address where you want your order delivered.</p>
+                    </div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input id="firstName" type="text" placeholder="John">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input id="lastName" type="text" placeholder="Doe">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="address">Street Address</label>
+                        <input id="address" type="text" placeholder="123 Main Street">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="address2">
+                            Apartment, Suite, etc.
+                            <span>(Optional)</span>
+                        </label>
+                        <input id="address2" type="text" placeholder="Apartment / Suite / Unit">
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input id="city" type="text" placeholder="Hyderabad">
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <select id="state">
+                            <option value="">Select State</option>
+                            <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="zip">ZIP / Postal Code</label>
+                        <input id="zip" type="text" placeholder="500001">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select id="country">
+                            <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delivery Method -->
+
+            <div class="form-card">
+                <div class="section-heading">
+                    <div class="section-icon">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <div>
+                        <h2>Delivery Method</h2>
+                        <p>Choose how quickly you want your order delivered.</p>
+                    </div>
+                </div>
+                <div class="delivery-options">
+                    <label
+                        class="delivery-option"
+                        *ngFor="let option of deliveryOptions"
+                        [class.selected]="selectedDelivery === option.id"
+                        (click)="selectDelivery(option.id)">
+                        <input
+                            type="radio"
+                            name="delivery"
+                            [checked]="selectedDelivery === option.id"
+                        >
+                        <div class="delivery-icon">
+                            <i class="fa-solid {{ option.icon }}"></i>
+                        </div>
+                        <div class="delivery-content">
+                            <h3>{{ option.label }}</h3>
+                            <p>{{ option.description }}</p>
+                        </div>
+                        <strong>${{ option.price.toFixed(2) }}</strong>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Continue -->
+
+            <div class="shipping-actions">
+                <button class="back-button" (click)="goBack()">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to Products
+                </button>
+                <button class="payment-button" (click)="goToPayment()">
+                    Continue to Payment
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- ================= RIGHT SIDE ================= -->
+        
+        <aside class="order-summary">
+            <h2>Order Summary</h2>
+
+            <!-- Product -->
+            
+            <div class="summary-product">
+                <img
+                    [src]="orderSummary.productImage"
+                    [alt]="orderSummary.productName"
+                >
+                <div>
+                    <h3>{{ orderSummary.productName }}</h3>
+                    <p>Qty: {{ orderSummary.qty }}</p>
+                </div>
+                <strong>${{ orderSummary.subtotal.toFixed(2) }}</strong>
+            </div>
+            <div class="summary-divider"></div>
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <strong>${{ orderSummary.subtotal.toFixed(2) }}</strong>
+            </div>
+            <div class="summary-row">
+                <span>Estimated GST (18%)</span>
+                <strong>${{ orderSummary.gst.toFixed(2) }}</strong>
+            </div>
+            <div class="summary-row">
+                <span>Shipping</span>
+                <strong>${{ orderSummary.shipping.toFixed(2) }}</strong>
+            </div>
+            <div class="summary-divider"></div>
+            <div class="grand-total">
+                <span>Grand Total</span>
+                <strong>${{ orderSummary.grandTotal.toFixed(2) }}</strong>
+            </div>
+
+            <!-- Security -->
+            
+            <div class="secure-checkout">
+                <i class="fa-solid fa-lock"></i>
+                <div>
+                    <strong>Secure Checkout</strong>
+                    <p>
+                        Your information is encrypted and protected.
+                    </p>
+                </div>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<!-- Footer Section -->
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- Brand Info -->
+
+      <div class="footer-col brand-col">
+        <div class="logo">
+          <i class="fa-solid fa-gear"></i>
+          <span>Spare Parts</span>
+        </div>
+        <p>Your premium destination for high-grade OEM &amp; aftermarket Industrial spare parts. Reliable, fast delivery &amp; 100% fitment guarantee.</p>
+      </div>
+
+      <!-- Quick Links -->
+
+      <div class="footer-col">
+        <h4>QUICK LINKS</h4>
+        <ul>
+          <li *ngFor="let link of footerQuickLinks">
+            <a [routerLink]="link.href">{{ link.label }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Top Categories -->
+
+      <div class="footer-col">
+        <h4>Top Categories</h4>
+        <ul>
+          <li *ngFor="let cat of footerCategories">
+            <a [href]="cat.href">{{ cat.label }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+
+      <div class="footer-col newsletter-col">
+        <h4>Newsletter</h4>
+        <p>Get discount vouchers and monthly maintenance tips.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email" required>
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Sub Footer -->
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Industrial Spare Parts Store. Designed for E-Commerce Maintenance Platforms.</p>
+    </div>
+  </footer> 

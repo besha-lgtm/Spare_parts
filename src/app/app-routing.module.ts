@@ -13,6 +13,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { ShippingComponent } from './pages/shipping/shipping.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { ConfirmationComponent } from './pages/confirmation/confirmation.component';
+import { DetailComponent } from './pages/detail/detail.component';
 
 
 const routes: Routes = [
@@ -47,6 +48,8 @@ const routes: Routes = [
   { path: 'payment', component: PaymentComponent },
   // ✅ Confirmation
   { path: 'confirmation', component: ConfirmationComponent },
+  // ✅ Detail
+  { path: 'detail/:id', component: DetailComponent },
  // ✅ Header
   { path: 'header', component: HeaderComponent }
 

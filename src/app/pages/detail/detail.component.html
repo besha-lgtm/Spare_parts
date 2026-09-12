@@ -1,0 +1,269 @@
+<app-header></app-header>
+ 
+
+  <!-- Main Navigation Header -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="brand-logo">
+        <i class="fa-solid fa-gear"></i>
+        <span>APEX<span>AUTO</span></span>
+      </div>
+
+      <div class="search-bar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search brake pads, filters, engine parts...">
+      </div>
+
+
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Dark Mode Toggle"><i class="fa-solid fa-moon"></i></button>
+        <button class="icon-btn cart-btn" aria-label="Shopping Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb-bar">
+    <span class="breadcrumb-link" (click)="goBackToProducts()">
+      <i class="fa-solid fa-arrow-left"></i> Back to Products
+    </span>
+  </div>
+
+  <!-- Main Content Wrapper -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Product Showcase Card -->
+      <section class="card product-card">
+
+  <!-- Gallery -->
+  <div class="product-gallery">
+
+    <div class="main-image">
+
+      <img
+        class="main-img"
+        [src]="product.image"
+        [alt]="product.title">
+
+    </div>
+
+  </div>
+
+
+  <!-- Details -->
+  <div class="product-details">
+
+    <div class="meta-tags">
+
+      <span class="category-pill">
+        {{ product.category }}
+      </span>
+
+      <span class="sku-text">
+        SKU: {{ product.sku }}
+      </span>
+
+    </div>
+
+
+    <h1 class="product-title">
+      {{ product.title }}
+    </h1>
+
+
+    <div class="rating-stock-row">
+
+      <div class="stars">
+
+        <i class="fa-solid fa-star"></i>
+
+        <span>
+          {{ product.rating }}
+        </span>
+
+      </div>
+
+
+      <span class="brand-info">
+        Brand:
+        <strong>
+          {{ product.brand }}
+        </strong>
+      </span>
+
+
+      <span class="stock-status">
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        {{ product.stock }}
+
+      </span>
+
+    </div>
+
+
+    <div class="price-row">
+
+      <span class="current-price">
+        ${{ product.price }}
+      </span>
+
+    </div>
+
+
+    <p class="product-desc">
+      {{ product.description }}
+    </p>
+
+
+    <div class="purchase-actions">
+
+      <button class="btn btn-primary">
+        <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+      </button>
+
+      <button class="btn btn-teal" (click)="goToShipping()">
+        <i class="fa-solid fa-bolt"></i> Buy Now
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+      <!-- Technical Specifications Card -->
+      <section class="card specs-card">
+        <h2 class="card-title">Technical Specifications</h2>
+        <div class="specs-grid">
+          <div class="spec-item" *ngFor="let spec of specs">
+            <span class="label">{{ spec.label }}</span>
+            <span class="value">{{ spec.value }}</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Spare Parts -->
+      <section class="related-section">
+        <h2 class="card-title">Related Spare Parts</h2>
+        
+        <div class="related-grid">
+          <div class="related-item-card">
+            <div class="card-media">
+              <span class="badge-stock">In Stock</span>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8X9fifguEC5Lkw79AIb3kMSrsNpgtOXGQoOwUQ8uAkA&s=10" alt="Proximity sensor">
+            </div>
+            <div class="card-body">
+              <div class="item-meta">
+                <span class="brand">BOSCH</span>
+                <span class="sku">SKU: BRK-8821</span>
+              </div>
+              <h3 class="item-name">Vented Front Brake Disc Rotor</h3>
+              <p class="item-desc">Precision CNC vented brake disc engineered for superior heat dissipation and extreme endurance.</p>
+              <div class="item-bottom">
+                <div class="item-price">$89.50</div>
+                <div class="item-actions">
+                  <button class="btn-icon" aria-label="Quick View"><i class="fa-regular fa-eye"></i></button>
+                  <button class="btn-icon-cart"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+ <!-- Footer Section -->
+
+  <footer class="footer">
+
+    <div class="footer-container">
+
+      <!-- Brand Info -->
+
+      <div class="footer-col brand-col">
+
+        <div class="logo">
+
+          <i class="fa-solid fa-gear"></i>
+
+          <span>Spare Parts</span>
+
+        </div>
+
+        <p>Your premium destination for high-grade OEM &amp; aftermarket Industrial spare parts. Reliable, fast delivery &amp; 100% fitment guarantee.</p>
+
+      </div>
+
+
+
+      <!-- Quick Links -->
+
+      <div class="footer-col">
+
+        <h4>QUICK LINKS</h4>
+
+        <ul>
+          <li *ngFor="let link of footerQuickLinks">
+            <a [routerLink]="link.href">{{ link.label }}</a>
+          </li>
+        </ul>
+
+      </div>
+
+
+
+      <!-- Top Categories -->
+
+      <div class="footer-col">
+
+        <h4>Top Categories</h4>
+
+        <ul>
+          <li *ngFor="let cat of footerCategories">
+            <a [href]="cat.href">{{ cat.label }}</a>
+          </li>
+        </ul>
+
+      </div>
+
+
+
+      <!-- Newsletter -->
+
+      <div class="footer-col newsletter-col">
+
+        <h4>Newsletter</h4>
+
+        <p>Get discount vouchers and monthly maintenance tips.</p>
+
+        <form class="newsletter-form">
+
+          <input type="email" placeholder="Your email" required>
+
+          <button type="submit">Join</button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- Sub Footer -->
+
+    <div class="footer-bottom">
+
+      <p>&copy; 2026 Industrial Spare Parts Store. Designed for E-Commerce Maintenance Platforms.</p>
+
+    </div>
+
+  </footer> 

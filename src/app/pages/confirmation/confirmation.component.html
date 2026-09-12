@@ -1,1 +1,157 @@
-<p>confirmation works!</p>
+<app-header></app-header>
+
+<!-- ================= CONFIRMATION PAGE ================= -->
+
+<main class="confirmation-page">
+
+    <!-- ================= CHECKOUT STEPS ================= -->
+
+    <div class="checkout-progress">
+        <div class="progress-step completed">
+            <span class="step-number"><i class="fa-solid fa-check"></i></span>
+            <span>Cart</span>
+        </div>
+        <div class="progress-line completed-line"></div>
+        <div class="progress-step completed">
+            <span class="step-number"><i class="fa-solid fa-check"></i></span>
+            <span>Shipping</span>
+        </div>
+        <div class="progress-line completed-line"></div>
+        <div class="progress-step completed">
+            <span class="step-number"><i class="fa-solid fa-check"></i></span>
+            <span>Payment</span>
+        </div>
+        <div class="progress-line completed-line"></div>
+        <div class="progress-step completed">
+            <span class="step-number"><i class="fa-solid fa-check"></i></span>
+            <span>Confirm</span>
+        </div>
+    </div>
+
+    <!-- ================= SUCCESS CARD ================= -->
+
+    <div class="confirmation-container">
+
+        <!-- Success Icon -->
+        <div class="success-icon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+
+        <h1 class="success-title">Order Confirmed!</h1>
+        <p class="success-subtitle">
+            Thank you for your purchase. Your order has been placed successfully.
+        </p>
+
+        <!-- Order Number -->
+        <div class="order-badge">
+            <span class="order-label">Order Number</span>
+            <span class="order-number">{{ orderNumber }}</span>
+        </div>
+
+        <!-- Order Details -->
+        <div class="order-summary-card">
+            <h2>Order Summary</h2>
+            <div class="summary-product-row">
+                <img [src]="orderDetails.productImage" [alt]="orderDetails.productName">
+                <div class="summary-product-info">
+                    <strong>{{ orderDetails.productName }}</strong>
+                    <span>Qty: {{ orderDetails.qty }}</span>
+                </div>
+                <strong class="summary-product-price">${{ orderDetails.subtotal.toFixed(2) }}</strong>
+            </div>
+            <div class="summary-divider"></div>
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <strong>${{ orderDetails.subtotal.toFixed(2) }}</strong>
+            </div>
+            <div class="summary-row">
+                <span>Estimated GST (18%)</span>
+                <strong>${{ orderDetails.gst.toFixed(2) }}</strong>
+            </div>
+            <div class="summary-row">
+                <span>Shipping</span>
+                <strong>${{ orderDetails.shipping.toFixed(2) }}</strong>
+            </div>
+            <div class="summary-divider"></div>
+            <div class="grand-total-row">
+                <span>Grand Total</span>
+                <strong>${{ orderDetails.grandTotal.toFixed(2) }}</strong>
+            </div>
+        </div>
+
+        <!-- Delivery Info -->
+        <div class="delivery-info">
+            <i class="fa-solid fa-truck-fast"></i>
+            <div>
+                <strong>Estimated Delivery</strong>
+                <p>{{ orderDetails.estimatedDelivery }}</p>
+            </div>
+        </div>
+
+        <!-- Redirect Notice -->
+        <div class="redirect-notice">
+            <i class="fa-solid fa-clock"></i>
+            Redirecting to Home in <strong>{{ countdown }}</strong> second{{ countdown !== 1 ? 's' : '' }}...
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="confirmation-actions">
+            <button class="btn-home" (click)="goHome()">
+                <i class="fa-solid fa-house"></i> Go to Home Now
+            </button>
+            <button class="btn-shop" [routerLink]="['/products']">
+                <i class="fa-solid fa-bag-shopping"></i> Continue Shopping
+            </button>
+        </div>
+
+    </div>
+
+</main>
+
+<!-- Footer Section -->
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col brand-col">
+      <div class="logo">
+        <i class="fa-solid fa-gear"></i>
+        <span>Spare Parts</span>
+      </div>
+      <p>Your premium destination for high-grade OEM &amp; aftermarket Industrial spare parts. Reliable, fast delivery &amp; 100% fitment guarantee.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>QUICK LINKS</h4>
+      <ul>
+        <li><a routerLink="/home">Home Page</a></li>
+        <li><a routerLink="/products">Catalog Products</a></li>
+        <li><a routerLink="/about">About Our Store</a></li>
+        <li><a href="#">Customer Support</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Top Categories</h4>
+      <ul>
+        <li><a href="#">Brake Systems</a></li>
+        <li><a href="#">Engine Components</a></li>
+        <li><a href="#">Air &amp; Oil Filters</a></li>
+        <li><a href="#">Electrical &amp; Batteries</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col newsletter-col">
+      <h4>Newsletter</h4>
+      <p>Get discount vouchers and monthly maintenance tips.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Your email" required>
+        <button type="submit">Join</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Industrial Spare Parts Store. Designed for E-Commerce Maintenance Platforms.</p>
+  </div>
+</footer>

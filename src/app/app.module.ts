@@ -41,6 +41,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { ShippingComponent } from './pages/shipping/shipping.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { ConfirmationComponent } from './pages/confirmation/confirmation.component';
+import{DetailComponent} from './pages/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { ConfirmationComponent } from './pages/confirmation/confirmation.compone
     ShippingComponent,
     PaymentComponent,
     ConfirmationComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

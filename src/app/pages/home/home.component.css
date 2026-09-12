@@ -20,11 +20,12 @@ section {
     font-size: 18px;
 }
 
-.hero-buttons{
+.hero-buttons {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+    margin-top: 40px; /* Adjust this value (e.g., 35px - 50px) to move them further down */
 }
 
 .btn{
@@ -76,19 +77,26 @@ section {
 }
 
 /* LEFT CONTENT */
-.about-text h2{
-    font-size: 2rem;
-    font-weight: 500;
+
+.about-text {
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 2.75rem; /* Increase from 2rem (e.g., 2.5rem - 3rem / 40px - 48px) */
+    font-weight: 500;   /* Optional: make it bolder for extra prominence */
     color: #0f172a;
     line-height: 1.2;
     margin-bottom: 28px;
+    text-align: left;
 }
 
-.about-text p{
+.about-text p {
     font-size: 1.15rem;
     line-height: 1.9;
     color: #475569;
     margin-bottom: 22px;
+    text-align: left; /* ensures paragraphs stay left-aligned */
 }
 
 /* RIGHT SIDE */

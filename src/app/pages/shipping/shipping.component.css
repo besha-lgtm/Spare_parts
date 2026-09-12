@@ -1,0 +1,849 @@
+/* =========================
+   SHIPPING PAGE
+========================= */
+
+.shipping-page {
+    max-width: 1450px;
+
+    margin: 0 auto;
+
+    padding: 38px 20px 90px;
+}
+
+.page-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 30px;
+
+    color: #1d2939;
+
+    margin-bottom: 25px;
+}
+
+.page-title i {
+    color: #0877ad;
+}
+
+
+/* =========================
+   CHECKOUT PROGRESS
+========================= */
+
+.checkout-progress {
+    max-width: 900px;
+
+    margin: 0 auto 35px;
+
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 7px;
+
+    min-width: 90px;
+
+    color: #8995a5;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.progress-step.active {
+    color: #0877ad;
+}
+
+.progress-step.completed {
+    color: #0877ad;
+}
+
+.step-number {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e1e7ef;
+
+    color: #64748b;
+
+    font-weight: 700;
+}
+
+.progress-step.active .step-number,
+.progress-step.completed .step-number {
+    background: #0877ad;
+    color: #ffffff;
+}
+
+.progress-line {
+    height: 3px;
+
+    width: 100px;
+
+    background: #dbe2ea;
+
+    margin-bottom: 21px;
+}
+
+.progress-line.active-line {
+    background: #0877ad;
+}
+
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+.shipping-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        400px;
+
+    gap: 35px;
+
+    align-items: start;
+}
+
+
+/* =========================
+   FORM CARDS
+========================= */
+
+.shipping-form-container {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+.form-card {
+    background: #ffffff;
+
+    border: 1px solid #dce3eb;
+
+    border-radius: 15px;
+
+    padding: 28px;
+
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================
+   SECTION HEADING
+========================= */
+
+.section-heading {
+    display: flex;
+    gap: 14px;
+
+    align-items: flex-start;
+
+    margin-bottom: 25px;
+}
+
+.section-icon {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: #e4f2fb;
+
+    color: #0877ad;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.section-heading h2 {
+    font-size: 20px;
+
+    color: #263244;
+
+    margin-bottom: 5px;
+}
+
+.section-heading p {
+    font-size: 13px;
+
+    color: #7b8797;
+}
+
+
+/* =========================
+   FORM GRID
+========================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 19px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    color: #263244;
+
+    font-weight: 700;
+}
+
+.form-group label span {
+    color: #909baa;
+
+    font-weight: 400;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    height: 45px;
+
+    padding: 0 13px;
+
+    border: 1px solid #d6dde6;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #334155;
+
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #0877ad;
+
+    box-shadow:
+        0 0 0 3px rgba(8, 119, 173, 0.08);
+}
+
+
+/* =========================
+   DELIVERY OPTIONS
+========================= */
+
+.delivery-options {
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+.delivery-option {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    border: 1px solid #d8e0e9;
+
+    border-radius: 10px;
+
+    padding: 16px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.delivery-option:hover {
+    border-color: #0877ad;
+}
+
+.delivery-option.selected {
+    border: 2px solid #0877ad;
+
+    background: #f2f9fd;
+}
+
+.delivery-option input {
+    accent-color: #0877ad;
+}
+
+.delivery-icon {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: #e4f2fb;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #0877ad;
+}
+
+.delivery-content {
+    flex: 1;
+}
+
+.delivery-content h3 {
+    font-size: 15px;
+
+    color: #273244;
+
+    margin-bottom: 4px;
+}
+
+.delivery-content p {
+    font-size: 12px;
+
+    color: #7a8797;
+}
+
+.delivery-option > strong {
+    color: #273244;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   ORDER SUMMARY
+========================= */
+
+.order-summary {
+    background: #ffffff;
+
+    border: 1px solid #dce3eb;
+
+    border-radius: 17px;
+
+    padding: 27px;
+
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.04);
+
+    position: sticky;
+
+    top: 20px;
+}
+
+.order-summary h2 {
+    font-size: 22px;
+
+    color: #202b3e;
+
+    margin-bottom: 20px;
+}
+
+.summary-product {
+    display: grid;
+
+    grid-template-columns: 65px 1fr auto;
+
+    gap: 12px;
+
+    align-items: center;
+}
+
+.summary-product img {
+    width: 65px;
+    height: 65px;
+
+    object-fit: cover;
+
+    border-radius: 7px;
+
+    border: 1px solid #dfe5ec;
+}
+
+.summary-product h3 {
+    font-size: 14px;
+
+    line-height: 1.35;
+
+    color: #293548;
+}
+
+.summary-product p {
+    margin-top: 5px;
+
+    font-size: 12px;
+
+    color: #8b97a7;
+}
+
+.summary-product strong {
+    font-size: 14px;
+
+    color: #293548;
+}
+
+.summary-divider {
+    height: 1px;
+
+    background: #d9e0e8;
+
+    margin: 20px 0;
+}
+
+.summary-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 7px 0;
+
+    color: #68768a;
+
+    font-size: 14px;
+}
+
+.summary-row strong {
+    color: #293548;
+
+    font-weight: 500;
+}
+
+.grand-total {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-size: 20px;
+
+    font-weight: 800;
+}
+
+.grand-total strong {
+    color: #0877ad;
+}
+
+
+/* =========================
+   SECURE CHECKOUT
+========================= */
+
+.secure-checkout {
+    margin-top: 25px;
+
+    padding: 15px;
+
+    display: flex;
+
+    gap: 12px;
+
+    border-radius: 9px;
+
+    background: #f3f8fc;
+
+    color: #0877ad;
+}
+
+.secure-checkout i {
+    margin-top: 2px;
+}
+
+.secure-checkout strong {
+    display: block;
+
+    color: #293548;
+
+    font-size: 13px;
+
+    margin-bottom: 4px;
+}
+
+.secure-checkout p {
+    color: #7c8998;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.shipping-actions {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 2px;
+}
+
+.back-button {
+    text-decoration: none;
+
+    color: #637187;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.back-button:hover {
+    color: #0877ad;
+}
+
+.back-button i {
+    margin-right: 7px;
+}
+
+.payment-button {
+    border: none;
+
+    background: #0877ad;
+
+    color: #ffffff;
+
+    height: 52px;
+
+    padding: 0 30px;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 7px rgba(0, 0, 0, 0.12);
+}
+
+.payment-button:hover {
+    background: #06658f;
+}
+
+.payment-button i {
+    margin-left: 8px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+
+    .main-header {
+        gap: 15px;
+    }
+
+    .navbar {
+        gap: 15px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+
+    .shipping-layout {
+        grid-template-columns: 1fr 350px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+
+/* =========================
+   TABLET / MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+    .main-header {
+        flex-wrap: wrap;
+
+        padding: 15px;
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    .header-icons {
+        order: 2;
+
+        margin-left: auto;
+    }
+
+    .search-box {
+        width: 100%;
+
+        max-width: none;
+
+        order: 3;
+    }
+
+    .navbar {
+        order: 4;
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .shipping-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .order-summary {
+        position: static;
+
+        width: 100%;
+    }
+
+    .checkout-progress {
+        overflow-x: auto;
+
+        justify-content: flex-start;
+
+        padding: 5px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .prototype-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .prototype-buttons {
+        overflow-x: auto;
+
+        flex-wrap: nowrap;
+    }
+
+    .prototype-buttons button {
+        flex-shrink: 0;
+    }
+
+    .page-title {
+        font-size: 25px;
+    }
+
+    .form-card {
+        padding: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full-width {
+        grid-column: auto;
+    }
+
+    .delivery-option {
+        align-items: flex-start;
+    }
+
+    .delivery-option > strong {
+        margin-left: auto;
+    }
+
+    .shipping-actions {
+        flex-direction: column-reverse;
+
+        gap: 17px;
+
+        align-items: stretch;
+    }
+
+    .payment-button {
+        width: 100%;
+    }
+
+    .back-button {
+        text-align: center;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        padding: 40px 20px;
+    }
+
+}
+
+/* Base Footer Style */
+.footer {
+  background-color: #3282b8;
+  color: #000000; /* Set default text color to black */
+  padding: 50px 20px 20px;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 30px;
+}
+
+/* Headings */
+.footer-col h4 {
+  color: white; /* Changed from white to black */
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Logo */
+.brand-col .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white; /* Changed from white to black */
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.brand-col .logo i {
+  color:white;
+}
+
+.brand-col p, .newsletter-col p {
+  color: white; /* Ensures body text is black */
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+/* Links */
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: white; /* Changed from gray to black */
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: color 0.2s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #ffffff; /* Link hover state */
+}
+
+/* Newsletter Form */
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  margin-top: 12px;
+}
+
+.newsletter-form input {
+  margin: 0;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 4px 4px 0 0;
+  outline: none;
+  font-size: 0.85rem;
+  width: 100%;
+  color: white; /* Input text color */
+}
+
+.newsletter-form button {
+  margin: 0;
+  background-color: black;
+  color: #ffffff;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 0 0 4px 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.85rem;
+  transition: background-color 0.2s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: #005a9e;
+}
+
+/* Sub-Footer */
+.footer-bottom {
+  border-top: 1px solid #1a2942;
+  margin-top: 40px;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: white; /* Changed copyright text to black */
+}
+
+/* Responsive Layout */
+@media (max-width: 850px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}

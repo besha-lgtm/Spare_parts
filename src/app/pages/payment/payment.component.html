@@ -1,1 +1,190 @@
-<p>payment works!</p>
+<app-header></app-header>
+
+<!-- ================= PAYMENT PAGE ================= -->
+
+<main class="payment-page">
+
+    <!-- ================= CHECKOUT STEPS ================= -->
+    
+    <div class="checkout-progress">
+        <div class="progress-step completed">
+            <span class="step-number">
+                <i class="fa-solid fa-check"></i>
+            </span>
+            <span>Cart</span>
+        </div>
+        <div class="progress-line completed-line"></div>
+        <div class="progress-step completed">
+            <span class="step-number">
+                <i class="fa-solid fa-check"></i>
+            </span>
+            <span>Shipping</span>
+        </div>
+        <div class="progress-line active-line"></div>
+        <div class="progress-step active">
+            <span class="step-number">3</span>
+            <span>Payment</span>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-step">
+            <span class="step-number">4</span>
+            <span>Confirm</span>
+        </div>
+    </div>
+
+    <!-- ================= PAYMENT LAYOUT ================= -->
+    
+    <div class="payment-layout">
+
+        <!-- ================= PAYMENT FORM ================= -->
+        
+        <section class="payment-card">
+            <h1>Select Payment Option</h1>
+
+            <!-- Payment Methods -->
+
+            <div class="payment-methods">
+                <button
+                    *ngFor="let method of paymentMethods"
+                    class="payment-method"
+                    [class.selected]="selectedMethod === method.id"
+                    (click)="selectMethod(method.id)">
+                    {{ method.label }}
+                </button>
+            </div>
+
+            <!-- Cardholder Name -->
+
+            <div class="form-group">
+                <label for="cardholder">
+                    Cardholder Name
+                </label>
+                <input
+                    id="cardholder"
+                    type="text"
+                    placeholder="John Doe"
+                >
+            </div>
+
+            <!-- Card Number -->
+
+            <div class="form-group">
+                <label for="cardNumber">
+                    Card Number
+                </label>
+                <input
+                    id="cardNumber"
+                    type="text"
+                    placeholder="4532 •••• •••• 8892"
+                >
+            </div>
+
+            <!-- Expiry + CVV -->
+
+            <div class="card-row">
+                <div class="form-group">
+                    <label for="expiry">
+                        Expiry Date
+                    </label>
+                    <input
+                        id="expiry"
+                        type="text"
+                        placeholder="08 / 28"
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="cvv">
+                        CVV
+                    </label>
+                    <input
+                        id="cvv"
+                        type="password"
+                        placeholder="•••"
+                    >
+                </div>
+            </div>
+            <div class="payment-divider"></div>
+
+            <!-- Bottom Actions -->
+
+            <div class="payment-actions">
+                <button class="back-button" (click)="goBack()">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to Shipping
+                </button>
+                <button class="pay-button" (click)="placeOrder()">
+                    <i class="fa-solid fa-lock"></i>
+                    Pay Now &amp; Complete Order
+                </button>
+            </div>
+        </section>
+
+        <!-- ================= AMOUNT SUMMARY ================= -->
+        
+        <aside class="amount-card">
+            <h2>Total Amount Due</h2>
+            <div class="amount-divider"></div>
+            <div class="amount">
+                ${{ totalAmount.toFixed(2) }}
+            </div>
+            <p>{{ amountNote }}</p>
+        </aside>
+    </div>
+</main>
+
+
+<!-- Footer Section -->
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- Brand Info -->
+
+      <div class="footer-col brand-col">
+        <div class="logo">
+          <i class="fa-solid fa-gear"></i>
+          <span>Spare Parts</span>
+        </div>
+        <p>Your premium destination for high-grade OEM &amp; aftermarket Industrial spare parts. Reliable, fast delivery &amp; 100% fitment guarantee.</p>
+      </div>
+
+      <!-- Quick Links -->
+
+      <div class="footer-col">
+        <h4>QUICK LINKS</h4>
+        <ul>
+          <li *ngFor="let link of footerQuickLinks">
+            <a [routerLink]="link.href">{{ link.label }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Top Categories -->
+
+      <div class="footer-col">
+        <h4>Top Categories</h4>
+        <ul>
+          <li *ngFor="let cat of footerCategories">
+            <a [href]="cat.href">{{ cat.label }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+
+      <div class="footer-col newsletter-col">
+        <h4>Newsletter</h4>
+        <p>Get discount vouchers and monthly maintenance tips.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email" required>
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Sub Footer -->
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Industrial Spare Parts Store. Designed for E-Commerce Maintenance Platforms.</p>
+    </div>
+  </footer> 
